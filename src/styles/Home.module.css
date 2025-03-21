@@ -16,6 +16,14 @@
   align-items: center;
 }
 
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .title a {
   color: #0d76fc;
   text-decoration: none;

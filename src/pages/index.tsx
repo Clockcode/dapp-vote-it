@@ -1,32 +1,26 @@
-import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
-import styles from '../styles/Home.module.css';
+import Link from 'next/link';
+import Header from '../components/header';
+import RulesCard from '../components/rulesCard';
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <main className={styles.main}>
-        <h1 className={styles.title}>Voting DApp</h1>
-        <div className={styles.container}>
-          <p className={styles.description}>
-            Rules are simple:
-          </p>
-          <p className={styles.description}>
-            You will have 2 choices to vote for.
-          </p>
-          <p className={styles.description}>
-            If you vote for the popular choice, you will be rewarded.
-          </p>
-          <p className={styles.description}>
-            If you vote for the unpopular choice, you will be punished.
-          </p>
-        </div>
-        <h2 className={styles.subtitle}>
+    <>
+      <Header />
+      <main className="h-screen flex flex-col items-center justify-center gap-4">
+        <h2 className="text-2xl font-bold">
           Connect your wallet to start voting
         </h2>
-        <ConnectButton />
+        <Link href="/vote">
+          <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+            VOTE IT
+          </button>
+        </Link>
+        <div className="flex flex-col items-center justify-center gap-4">
+          <RulesCard />
+        </div>
       </main>
-    </div>
+    </>
   );
 };
 
